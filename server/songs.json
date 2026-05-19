@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "title": "River Flows in You",
+    "artist": "Yiruma",
+    "genre": "Piano",
+    "mood": "Calm",
+    "difficulty": "Intermediate",
+    "status": "Learning",
+    "isFavorite": false,
+    "youtubeUrl": "https://www.youtube.com/results?search_query=River+Flows+in+You+Yiruma"
+  },
+  {
+    "id": 2,
+    "title": "Canon in D",
+    "artist": "Pachelbel",
+    "genre": "Classical",
+    "mood": "Peaceful",
+    "difficulty": "Intermediate",
+    "status": "Practice",
+    "isFavorite": false,
+    "youtubeUrl": "https://www.youtube.com/results?search_query=Canon+in+D+Pachelbel"
+  },
+  {
+    "id": 3,
+    "title": "Dusingize Imana",
+    "artist": "Mugabe J.J. Béni Bertrand",
+    "genre": "Classic",
+    "mood": "Minor",
+    "difficulty": "Advanced",
+    "status": "Singing",
+    "isFavorite": false,
+    "youtubeUrl": "https://www.youtube.com/watch?v=ua7sony-15o&list=RDua7sony-15o&start_radio=1"
+  }
+]

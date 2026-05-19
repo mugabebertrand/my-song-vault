@@ -1,0 +1,241 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f7fb;
+  color: #222;
+}
+
+nav {
+  background-color: #2d1b4e;
+  padding: 18px 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #d8c3ff;
+}
+
+div {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+h1 {
+  color: #2d1b4e;
+  font-size: 48px;
+}
+.song-card {
+  background-color: white;
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.song-card h2 {
+  color: #2d1b4e;
+  margin-bottom: 10px;
+}
+
+.song-card p {
+  color: #666;
+}
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #5a4a6b;
+  max-width: 750px;
+  margin: 0 auto 30px;
+}
+
+.feature-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.feature-card,
+.contact-card {
+  background-color: white;
+  width: 250px;
+  margin: 15px;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+
+.feature-card h2 {
+  color: #2d1b4e;
+}
+
+.contact-card {
+  width: 400px;
+  margin: 20px auto;
+}
+.songs-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.song-card {
+  background-color: white;
+  width: 280px;
+  margin: 15px;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  text-align: left;
+}
+
+.song-card h2 {
+  color: #2d1b4e;
+  text-align: center;
+}
+
+.song-card p {
+  font-size: 16px;
+  color: #4f435d;
+  margin: 8px 0;
+}
+/* ── Add Song Form ── */
+.add-song-form {
+  background: white;
+  max-width: 500px;
+  margin: 0 auto 40px;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.add-song-form h2 {
+  color: #2d1b4e;
+  text-align: center;
+  margin: 0 0 8px;
+}
+
+.add-song-form input {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.add-song-form input:focus {
+  border-color: #7c5cbf;
+}
+
+.form-error {
+  color: #c0392b;
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  background-color: #2d1b4e;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #4a2c7a;
+}
+
+.song-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.song-card-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.fav-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #ccc;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.2s, transform 0.15s;
+}
+
+.fav-btn:hover {
+  transform: scale(1.2);
+}
+
+.fav-active {
+  color: #e84393;
+}
+
+.song-card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.btn-listen {
+  background-color: #2d1b4e;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.btn-listen:hover {
+  background-color: #4a2c7a;
+}
+
+.btn-delete {
+  background: none;
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-delete:hover {
+  background-color: #e74c3c;
+  color: white;
+}
