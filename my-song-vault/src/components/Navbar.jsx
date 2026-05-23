@@ -1,6 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+
+  function handleLogout() {
+    localStorage.removeItem("token");
+    navigate("/login");
+  }
+
   return (
     <nav>
       <Link to="/">Home</Link>
@@ -8,6 +16,11 @@ function Navbar() {
       <Link to="/favorites">Favorites</Link>
       <Link to="/about">About</Link>
       <Link to="/contact">Contact</Link>
+      {token ? (
+        <button onClick={handleLogout} className="btn-logout">Logout</button>
+      ) : (
+        <Link to="/login">Login</Link>
+      )}
     </nav>
   );
 }
