@@ -16,12 +16,16 @@ function Songs() {
   const [showForm, setShowForm] = useState(false);
   const [error, setError] = useState("");
 
+  const token = localStorage.getItem("token");
+
   useEffect(() => {
     fetchSongs();
   }, []);
 
   function fetchSongs() {
-    fetch("http://localhost:5000/api/songs")
+    fetch("http://localhost:5000/api/songs", {
+      headers: { Authorization: `Bearer ${token}` },
+    })
       .then((res) => res.json())
       .then((data) => setSongs(data))
       .catch((err) => console.error("Error fetching songs:", err));
@@ -40,7 +44,10 @@ function Songs() {
     setError("");
     fetch("http://localhost:5000/api/songs", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
       body: JSON.stringify(form),
     })
       .then((res) => res.json())
@@ -53,18 +60,33 @@ function Songs() {
   }
 
   function handleDelete(id) {
-    fetch(`http://localhost:5000/api/songs/${id}`, { method: "DELETE" })
+    fetch(`http://localhost:5000/api/songs/${id}`, {
+      method: "DELETE",
+      headers: { Authorization: `Bearer ${token}` },
+    })
       .then(() => setSongs(songs.filter((s) => s._id !== id)))
       .catch((err) => console.error("Error deleting song:", err));
   }
 
   function handleFavorite(id) {
-    fetch(`http://localhost:5000/api/songs/${id}/favorite`, { method: "PATCH" })
+    fetch(`http://localhost:5000/api/songs/${id}/favorite`, {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${token}` },
+    })
       .then((res) => res.json())
       .then((updated) =>
         setSongs(songs.map((s) => (s._id === updated._id ? updated : s)))
       )
       .catch((err) => console.error("Error toggling favorite:", err));
+  }
+
+  if (!token) {
+    return (
+      <div className="page">
+        <h1>Songs</h1>
+        <p>Please log in to see your songs.</p>
+      </div>
+    );
   }
 
   return (
