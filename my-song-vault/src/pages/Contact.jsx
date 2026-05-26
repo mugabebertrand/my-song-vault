@@ -10,7 +10,7 @@ function Contact() {
       <div className="contact-card">
         <p>📧 Email: jeanjacquesbertrandmugabe@gmail.com</p>
         <p>💻 GitHub: mugabebertrand</p>
-        <p>🔗 LinkedIn:</p>
+        <p>🔗 LinkedIn: Jean Jacques Bertrand Mugabe</p>
       </div>
     </div>
   );
