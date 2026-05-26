@@ -1,17 +1,14 @@
 function About() {
   return (
     <div className="page">
-      <h1>About My Song Vault</h1>
+      <h1>About Song Vault</h1>
 
       <p className="intro">
-        This project was created as a React portfolio project. It connects my
-        interest in music with my full-stack development journey.
+        Song Vault is a music library app built for musicians, singers, and music lovers who want a simple way to organize their songs and listen to them anytime.
       </p>
 
       <p className="intro">
-        The goal is to build a simple but useful app where musicians, students,
-        and music learners can organize songs, lyrics, practice notes, and
-        favorite pieces.
+        Save your songs, create playlists, mark your favorites, and enjoy nonstop playback — all from your phone or browser.
       </p>
     </div>
   );

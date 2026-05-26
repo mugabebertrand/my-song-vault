@@ -4,14 +4,13 @@ function Contact() {
       <h1>Contact</h1>
 
       <p className="intro">
-        This project was built by Jean Mugabe as part of a web development
-        portfolio.
+        Have questions or feedback? We'd love to hear from you.
       </p>
 
       <div className="contact-card">
-        <p>Email: your-email@example.com</p>
-        <p>GitHub: mugabebertrand</p>
-        <p>LinkedIn: Add your LinkedIn profile here</p>
+        <p>📧 Email: jeanjacquesbertrandmugabe@gmail.com</p>
+        <p>💻 GitHub: mugabebertrand</p>
+        <p>🔗 LinkedIn:</p>
       </div>
     </div>
   );

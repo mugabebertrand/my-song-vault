@@ -13,6 +13,7 @@ function Navbar() {
     <nav>
       <Link to="/">Home</Link>
       <Link to="/songs">Songs</Link>
+      <Link to="/playlists">Playlists</Link>
       <Link to="/favorites">Favorites</Link>
       <Link to="/about">About</Link>
       <Link to="/contact">Contact</Link>

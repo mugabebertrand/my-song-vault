@@ -2,30 +2,36 @@ import { useEffect, useState } from "react";
 
 function Favorites() {
   const [favorites, setFavorites] = useState([]);
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/songs")
+    fetch("http://localhost:5000/api/songs", {
+      headers: { Authorization: `Bearer ${token}` },
+    })
       .then((res) => res.json())
       .then((data) => setFavorites(data.filter((s) => s.isFavorite)))
       .catch((err) => console.error("Error fetching favorites:", err));
   }, []);
 
   function handleUnfavorite(id) {
-    fetch(`http://localhost:5000/api/songs/${id}/favorite`, { method: "PATCH" })
+    fetch(`http://localhost:5000/api/songs/${id}/favorite`, {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${token}` },
+    })
       .then(() => setFavorites(favorites.filter((s) => s._id !== id)))
       .catch((err) => console.error("Error removing favorite:", err));
   }
 
   return (
     <div className="page">
-      <h1>Favorites</h1>
+      <h1>❤️ Favorites</h1>
       <p className="intro">
-        Songs you marked as favorites. Heart a song on the Songs page to add it here.
+        Your most loved songs, always within reach.
       </p>
 
       {favorites.length === 0 ? (
         <p style={{ textAlign: "center", color: "#888", marginTop: "40px" }}>
-          No favorites yet — go to Songs and tap ♡ on a song.
+          No favorites yet — tap ♡ on any song to add it here.
         </p>
       ) : (
         <div className="songs-grid">
@@ -42,10 +48,6 @@ function Favorites() {
                 </button>
               </div>
               <p><strong>Artist:</strong> {song.artist}</p>
-              <p><strong>Genre:</strong> {song.genre}</p>
-              <p><strong>Mood:</strong> {song.mood}</p>
-              <p><strong>Difficulty:</strong> {song.difficulty}</p>
-              <p><strong>Status:</strong> {song.status}</p>
               {song.youtubeUrl && (
                 <div className="song-card-actions">
                   <a href={song.youtubeUrl} target="_blank" rel="noreferrer" className="btn-listen">
