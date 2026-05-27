@@ -25,7 +25,7 @@ function Songs() {
   }, []);
 
   function fetchSongs() {
-    fetch("http://localhost:5000/api/songs", {
+    fetch("https://my-song-vault.onrender.com/api/songs", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -34,7 +34,7 @@ function Songs() {
   }
 
   function fetchPlaylists() {
-    fetch("http://localhost:5000/api/playlists", {
+    fetch("https://my-song-vault.onrender.com/api/playlists", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -43,7 +43,7 @@ function Songs() {
   }
 
   function handleAddToPlaylist(songId, playlistId) {
-    fetch(`http://localhost:5000/api/playlists/${playlistId}/songs`, {
+    fetch(`https://my-song-vault.onrender.com/api/playlists/${playlistId}/songs`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -71,7 +71,7 @@ function Songs() {
       return;
     }
     setError("");
-    fetch("http://localhost:5000/api/songs", {
+    fetch("https://my-song-vault.onrender.com/api/songs", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -89,7 +89,7 @@ function Songs() {
   }
 
   function handleDelete(id) {
-    fetch(`http://localhost:5000/api/songs/${id}`, {
+    fetch(`https://my-song-vault.onrender.com/api/songs/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -98,7 +98,7 @@ function Songs() {
   }
 
   function handleFavorite(id) {
-    fetch(`http://localhost:5000/api/songs/${id}/favorite`, {
+    fetch(`https://my-song-vault.onrender.com/api/songs/${id}/favorite`, {
       method: "PATCH",
       headers: { Authorization: `Bearer ${token}` },
     })

@@ -10,7 +10,7 @@ function PlaylistDetail() {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/playlists/${id}`, {
+    fetch(`https://my-song-vault.onrender.com/api/playlists/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -62,7 +62,7 @@ function PlaylistDetail() {
   }, [currentIndex, playlist]);
 
   function handleRemoveSong(songId) {
-    fetch(`http://localhost:5000/api/playlists/${id}/songs/${songId}`, {
+    fetch(`https://my-song-vault.onrender.com/api/playlists/${id}/songs/${songId}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     })

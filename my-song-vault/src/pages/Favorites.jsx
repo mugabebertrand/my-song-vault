@@ -5,7 +5,7 @@ function Favorites() {
   const token = localStorage.getItem("token");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/songs", {
+    fetch("https://my-song-vault.onrender.com/api/songs", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -14,7 +14,7 @@ function Favorites() {
   }, []);
 
   function handleUnfavorite(id) {
-    fetch(`http://localhost:5000/api/songs/${id}/favorite`, {
+    fetch(`https://my-song-vault.onrender.com/api/songs/${id}/favorite`, {
       method: "PATCH",
       headers: { Authorization: `Bearer ${token}` },
     })
